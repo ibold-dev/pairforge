@@ -1,10 +1,21 @@
-<!-- BEGIN:turborepo-agent-rules -->
+# PairForge engineering instructions
 
-# This is NOT the Turborepo you know
+## Meteora integration
 
-Turborepo configuration, task behavior, and CLI commands can vary between installed versions and may differ from your training data. Resolve the `turbo` package from this file's directory or relevant workspace; in monorepos, it may not be visible from the repository root. For example, run `node -p "require.resolve('turbo/package.json')"` from a workspace that depends on `turbo`.
+- Use the official Meteora SDKs for DBC, DAMM v2, and DLMM interactions. Do not reproduce curve math or transaction builders.
+- Treat DBC and DAMM v2 accounts as canonical. Derived read models must retain the source account addresses, slots, and transaction signatures.
+- Confirm SDK compatibility against the current official protocol documentation before adding or upgrading an integration.
+- Keep transaction construction client-side and return unsigned transactions until the connected wallet signs.
+- Start every state-changing flow on devnet with an explicit simulation or dry-run. Mainnet execution requires explicit owner confirmation.
 
-Read `docs/README.md` inside that installed package first, then read the relevant pages from its `docs/` directory before changing Turborepo configuration or commands. Heed deprecation notices. These bundled docs match the installed package version and are available without network access.
+## Security and data handling
 
-This block is written and re-added by `turbo` before repository-scoped commands when an AI agent is detected. In the Turborepo source repository, its template is defined in `crates/turborepo-cli/src/cli/agent_guidance.rs`. Removing the managed block while updates are enabled means a later qualifying invocation will add it again. Set `"agentGuidance": false` in the root `turbo.json` or `turbo.jsonc` to opt out; this does not remove an existing block. Keep the block committed with your work to avoid an uncommitted change on the next agent invocation.
-<!-- END:turborepo-agent-rules -->
+- Never commit private keys, seed phrases, signing material, production RPC credentials, or API secrets.
+- Make human-unit and base-unit boundaries explicit in types, validation, and user-facing transaction previews.
+- Reject unexpected program IDs, unsupported token-mint configurations, and incomplete signer sets before a transaction is presented.
+
+## Repository conventions
+
+- Keep changes focused and covered by tests appropriate to their risk.
+- Run formatting, linting, typechecking, tests, and builds before creating a pull request.
+- Keep `apps/`, `packages/`, and `programs/` boundaries clear; cross-package dependencies must be intentional and typed.
