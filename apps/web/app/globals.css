@@ -212,3 +212,40 @@ dd {
     display: none;
   }
 }
+.market-head {
+  padding: 64px 0 30px;
+}
+.market-head h1 {
+  font-family: Georgia, serif;
+  font-size: 64px;
+  letter-spacing: -0.06em;
+  margin: 12px 0;
+}
+.market-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+.market-list article {
+  background: #fff;
+  border: 1px solid var(--ink);
+  min-height: auto;
+}
+.progress {
+  height: 8px;
+  background: #e5e3db;
+  margin: 24px 0 8px;
+}
+.progress i {
+  display: block;
+  height: 100%;
+  background: var(--signal);
+}
+small {
+  font-size: 12px;
+}
+@media (max-width: 650px) {
+  .market-list {
+    grid-template-columns: 1fr;
+  }
+}

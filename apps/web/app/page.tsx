@@ -9,7 +9,7 @@ export default function HomePage() {
     <main>
       <nav>
         <b>PAIRFORGE</b>
-        <span>Policy studio · Devnet</span>
+        <a href="/markets">Market lifecycle</a>
       </nav>
       <section className="hero">
         <p className="eyebrow">PAIR-NATIVE LAUNCHES</p>
