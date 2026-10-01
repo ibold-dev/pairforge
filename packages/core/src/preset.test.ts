@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest';
 
 import fixtureCases from './fixtures/preset-cases.json' with { type: 'json' };
+import { compileLaunchManifest } from './manifest.js';
 import { createPresetDigest, launchDraftSchema, presetSchema } from './preset.js';
 import { initialPresets } from './presets.js';
 
@@ -74,5 +75,19 @@ describe('preset manifests', () => {
       launchDraftSchema.safeParse({ ...draft, recipients: { ...draft.recipients, partner: 'bad' } })
         .success,
     ).toBe(false);
+  });
+
+  it('compiles separate fee and graduated-liquidity policies with pinned SDK versions', () => {
+    const draft = {
+      preset: firstPreset,
+      presetDigest: createPresetDigest(firstPreset),
+      token: { name: 'Example', symbol: 'EXM', supplyBaseUnits: '1000000000', decimals: 9 },
+      recipients: { creator: address, partner: address, leftoverReceiver: address },
+    };
+    const manifest = compileLaunchManifest(draft, { dbc: '1.5.13', dammV2: '1.5.1' });
+
+    expect(manifest.dbc.tradingFee.creatorPercentage).toBe(50);
+    expect(manifest.dbc.liquidityDistribution.creatorLockedPercentage).toBe(5);
+    expect(manifest.sdkVersions).toEqual({ dbc: '1.5.13', dammV2: '1.5.1' });
   });
 });
