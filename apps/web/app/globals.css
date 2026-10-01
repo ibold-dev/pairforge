@@ -156,6 +156,34 @@ input {
 .manifest code {
   color: #f6c6b9;
 }
+.curve-estimate {
+  margin-top: 20px;
+  padding-top: 18px;
+  border-top: 1px solid var(--ink);
+  font-size: 12px;
+  font-weight: bold;
+}
+.curve-line {
+  height: 74px;
+  margin: 12px 0 6px;
+  border-left: 2px solid var(--ink);
+  border-bottom: 2px solid var(--ink);
+  background: linear-gradient(
+    145deg,
+    transparent 49%,
+    var(--signal) 50%,
+    var(--signal) 52%,
+    transparent 53%
+  );
+}
+.curve-labels {
+  display: flex;
+  justify-content: space-between;
+}
+.curve-estimate p {
+  font-weight: normal;
+  line-height: 1.4;
+}
 dl {
   margin: 0;
 }

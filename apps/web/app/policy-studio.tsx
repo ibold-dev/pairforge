@@ -106,6 +106,18 @@ export function PolicyStudio() {
             {valid ? 'Ready for simulation' : 'Enter a token name and 2–10 character symbol'}
           </strong>
         </div>
+        <div className="curve-estimate">
+          <span>Curve estimate</span>
+          <div className="curve-line" />
+          <div className="curve-labels">
+            <b>Discovery</b>
+            <b>Graduation → DAMM v2</b>
+          </div>
+          <p>
+            Planning view only. Final price, graduation timing, and migration outcomes depend on
+            executed DBC state and trading activity.
+          </p>
+        </div>
       </div>
     </section>
   );
