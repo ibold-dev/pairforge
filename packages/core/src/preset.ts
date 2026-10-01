@@ -95,7 +95,7 @@ export const presetSchema = z
       .object({
         target: z.literal('damm-v2'),
         feeOption: z.int().min(0).max(6),
-        graduationThresholdQuoteUnits: z.string().regex(/^\d+$/),
+        graduationQuoteObjectiveUnits: z.string().regex(/^\d+$/),
       })
       .strict(),
     liquidityAllocation: liquidityAllocationSchema,

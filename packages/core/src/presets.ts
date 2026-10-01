@@ -31,7 +31,7 @@ export const initialPresets: readonly Preset[] = [
     migration: {
       target: 'damm-v2',
       feeOption: 0,
-      graduationThresholdQuoteUnits: '25000000000',
+      graduationQuoteObjectiveUnits: '25000000000',
     },
     liquidityAllocation: standardLiquidityAllocation,
   },
@@ -53,7 +53,7 @@ export const initialPresets: readonly Preset[] = [
     migration: {
       target: 'damm-v2',
       feeOption: 0,
-      graduationThresholdQuoteUnits: '50000000000',
+      graduationQuoteObjectiveUnits: '50000000000',
     },
     liquidityAllocation: standardLiquidityAllocation,
   },
@@ -75,7 +75,7 @@ export const initialPresets: readonly Preset[] = [
     migration: {
       target: 'damm-v2',
       feeOption: 0,
-      graduationThresholdQuoteUnits: '1000000000',
+      graduationQuoteObjectiveUnits: '1000000000',
     },
     liquidityAllocation: standardLiquidityAllocation,
   },

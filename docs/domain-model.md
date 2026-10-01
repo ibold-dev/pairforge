@@ -12,7 +12,7 @@ from DBC discovery into DAMM v2 liquidity.
 | Preset version         | An immutable revision of one preset, identified by a deterministic digest.         |
 | Curve policy           | Intent, timing, and the trading-fee schedule for the DBC phase.                    |
 | Curve fee split        | The distribution of fees earned while the virtual pool is active.                  |
-| Migration policy       | The threshold and DAMM v2 migration choice that end the DBC phase.                 |
+| Migration policy       | The graduation objective and DAMM v2 migration choice that end the DBC phase.      |
 | Liquidity allocation   | Who receives or locks DAMM v2 liquidity after graduation.                          |
 | Launch draft           | The creator-specific inputs and recipient addresses bound to a preset version.     |
 | Configuration manifest | The reproducible record of SDK version, policy, addresses, and resulting accounts. |
@@ -40,5 +40,8 @@ neither, subject to a complete launch draft.
   asset. It records reference context for disclosure; it does not continuously
   reprice an on-chain curve from an oracle.
 
-All values remain declarative in Phase 1. SDK-backed transaction composition,
-quote-asset catalogs, and network activity start in later phases.
+All values remain declarative in Phase 1. A graduation objective is a product
+target; the later SDK adapter selects the supported curve builder and derives the
+actual protocol threshold when the selected builder requires it. SDK-backed
+transaction composition, quote-asset catalogs, and network activity start in
+later phases.
