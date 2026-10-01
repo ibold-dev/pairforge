@@ -11,5 +11,11 @@
   },
   "devDependencies": {
     "tsup": "^8.5.0"
+  },
+  "dependencies": {
+    "@meteora-ag/cp-amm-sdk": "1.5.1",
+    "@meteora-ag/dynamic-bonding-curve-sdk": "1.5.13",
+    "@solana/web3.js": "^1.99.0",
+    "bn.js": "^5.2.5"
   }
 }
