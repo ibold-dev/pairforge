@@ -1,0 +1,12 @@
+{
+  "invalidLiquidityAllocation": {
+    "creatorClaimableBps": 4500,
+    "creatorLockedBps": 400,
+    "partnerClaimableBps": 4500,
+    "partnerLockedBps": 400
+  },
+  "invalidCurveFeeSplit": {
+    "creatorBps": 5000,
+    "partnerBps": 4999
+  }
+}
