@@ -112,6 +112,9 @@ importers:
       '@meteora-ag/dynamic-bonding-curve-sdk':
         specifier: 1.5.13
         version: 1.5.13(bufferutil@4.1.0)(typescript@6.0.3)
+      '@pairforge/core':
+        specifier: workspace:*
+        version: link:../core
       '@solana/web3.js':
         specifier: ^1.99.0
         version: 1.99.0(bufferutil@4.1.0)(typescript@6.0.3)
