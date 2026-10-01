@@ -61,6 +61,24 @@ export type CurveBuildInput = Readonly<{
   percentageSupplyOnMigration: number;
 }>;
 
+export type LaunchLifecycleSnapshot = Readonly<{
+  virtualPoolAddress: string;
+  migrated: boolean;
+  successorDammV2PoolAddress: string | null;
+}>;
+
+export function resolveLaunchLifecycle(input: {
+  virtualPoolAddress: string;
+  isMigrated: boolean;
+  dammV2PoolAddresses: readonly string[];
+}): LaunchLifecycleSnapshot {
+  return {
+    virtualPoolAddress: input.virtualPoolAddress,
+    migrated: input.isMigrated,
+    successorDammV2PoolAddress: input.isMigrated ? (input.dammV2PoolAddresses[0] ?? null) : null,
+  };
+}
+
 export function buildDbcCurve(input: CurveBuildInput): unknown {
   const { manifest } = input;
   const { tradingFee, liquidityDistribution, migration } = manifest.dbc;
