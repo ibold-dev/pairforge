@@ -1,0 +1,125 @@
+:root {
+  --ink: #17233a;
+  --paper: #f5f4ee;
+  --signal: #f16d4f;
+  --blue: #a9d6e5;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: Arial, sans-serif;
+}
+main {
+  max-width: 1200px;
+  margin: auto;
+  padding: 24px;
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #17233a;
+  padding-bottom: 18px;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+}
+.hero {
+  padding: 96px 0 72px;
+  max-width: 780px;
+}
+.eyebrow {
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  font-weight: bold;
+}
+.hero h1 {
+  font-family: Georgia, serif;
+  font-size: clamp(56px, 10vw, 128px);
+  line-height: 0.85;
+  letter-spacing: -0.07em;
+  margin: 20px 0;
+}
+.lede {
+  max-width: 520px;
+  font-size: 20px;
+  line-height: 1.45;
+}
+button {
+  background: var(--signal);
+  border: 0;
+  padding: 15px 20px;
+  color: var(--ink);
+  font-weight: bold;
+  margin-top: 18px;
+}
+.rail {
+  border-top: 1px solid var(--ink);
+  padding: 28px 0 72px;
+}
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+article {
+  background: var(--blue);
+  padding: 24px;
+  min-height: 220px;
+}
+article:nth-child(2) {
+  background: #d9e1ce;
+}
+article:nth-child(3) {
+  background: #f6c6b9;
+}
+article span {
+  font-size: 12px;
+}
+article h2,
+.studio h2 {
+  font-family: Georgia, serif;
+  font-size: 34px;
+  margin: 48px 0 10px;
+}
+a {
+  color: inherit;
+  font-weight: bold;
+}
+.studio {
+  border-top: 1px solid var(--ink);
+  padding: 56px 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+dl {
+  margin: 0;
+}
+dl div {
+  border-bottom: 1px solid var(--ink);
+  padding: 14px 0;
+  display: flex;
+  justify-content: space-between;
+}
+dt {
+  font-size: 13px;
+}
+dd {
+  margin: 0;
+  font-weight: bold;
+}
+@media (max-width: 650px) {
+  .cards,
+  .studio {
+    grid-template-columns: 1fr;
+  }
+  .hero {
+    padding-top: 64px;
+  }
+  nav span {
+    display: none;
+  }
+}
