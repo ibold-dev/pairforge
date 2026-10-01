@@ -37,26 +37,8 @@ export default function HomePage() {
           ))}
         </div>
       </section>
-      <section id="studio" className="studio">
-        <div>
-          <p className="eyebrow">POLICY STUDIO</p>
-          <h2>Every economic choice, before a wallet is involved.</h2>
-        </div>
-        <dl>
-          <div>
-            <dt>Quote asset</dt>
-            <dd>Devnet USDC</dd>
-          </div>
-          <div>
-            <dt>DBC fee share</dt>
-            <dd>50% / 50%</dd>
-          </div>
-          <div>
-            <dt>DAMM v2 liquidity</dt>
-            <dd>45 / 5 / 45 / 5</dd>
-          </div>
-        </dl>
-      </section>
+      <PolicyStudio />
     </main>
   );
 }
+import { PolicyStudio } from './policy-studio';
